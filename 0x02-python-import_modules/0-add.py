@@ -4,4 +4,4 @@ a = 1
 b = 2
 sum = add(a, b)
 if __name__ == '__main__':
-    print(f"{a:d} + {b:d} = {sum:d}")
+    print(f"{a:s} + {b:s} = {sum:s}")
