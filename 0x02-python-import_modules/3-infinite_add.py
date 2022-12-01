@@ -4,4 +4,4 @@ if __name__ == '__main__':
     sum_of_args = 0
     for i in range(1, len(sys.argv)):
             sum_of_args += int(sys.argv[i])
-    print("{}".format(sum_of_args))
+    print(sum_of_args)
