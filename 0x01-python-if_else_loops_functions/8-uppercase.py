@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-def islower(c):
-    dec = ord(c)
-    if dec >= 65 and dec <= 90:
-        return True
-    return False
+def islower(string):
+    for char in string:
+        print('{}'.format(chr(ord(char) - 32)), end='\n' if char == '\n' else '')
+    print('')
