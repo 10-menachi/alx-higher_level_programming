@@ -2,7 +2,7 @@
 def print_matrix_integer(matrix=[[]]):
     for l in matrix:
         for item in l:
-            print(item)
+            print('{:d}'.format(item))
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
