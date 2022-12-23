@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-for i in range(ord('z'), ord('a')-1, -1):
-    print(chr(i), end='')
-    print(chr(i-32), end='')
+for alph in range(122, 96, -1):
+    print("{}".format(chr(alph) if alph % 2 == 0 else chr(alph - 32)), end='')
