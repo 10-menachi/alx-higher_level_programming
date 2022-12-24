@@ -7,4 +7,3 @@ def max_integer(my_list=[]):
         if number > maximum:
             maximum = number
     return maximum
-print(max_integer([1, 90, 2, 13, 34, 5, -13, 3]))
