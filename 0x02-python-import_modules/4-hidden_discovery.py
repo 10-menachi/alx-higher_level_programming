@@ -5,4 +5,4 @@ if __name__ == "__main__":
     names = dir()
     for i in range(0, len(names)):
         if names[i][0:2] != "__":
-            print(names[i])
+            print("{}".format(names[i]))
