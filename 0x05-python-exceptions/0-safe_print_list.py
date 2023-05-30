@@ -3,8 +3,9 @@ def safe_print_list(my_list=[], x=0):
     count = 0
     for index in range(0, x):
         try:
-            count += 1
             print("{:d}".format(my_list[index]), end="")
+            if my_list[index]:
+                count += 1
         except IndexError:
             break
     print()
