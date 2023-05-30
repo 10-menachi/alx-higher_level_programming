@@ -6,4 +6,4 @@ class Square:
     """ Defines a class called Square with an attribute named size"""
 
     def __init__(self, size) -> None:
-        self._size = size
+        self.__size = size
