@@ -20,8 +20,8 @@ class Rectangle:
         self.width = value
 
     def height(self, value):
-        if type(value) != int:
-            return TypeError("height must be an integer")
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
         elif value < 0:
-            return ValueError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         self.height = value
