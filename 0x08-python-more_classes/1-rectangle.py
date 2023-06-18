@@ -3,7 +3,8 @@
 
 
 class Rectangle:
-    """ A class Rectangle that defines a rectangle with height and width properties """
+    """ A class Rectangle that defines a
+    rectangle with height and width properties """
 
     def __init__(self, width=0, height=0) -> None:
         if not isinstance(width, int):
@@ -40,3 +41,9 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self._height = value
+
+    def __dict__(self):
+        return {
+            f"_{self.__class__.__name__}__width": self._width,
+            f"_{self.__class__.__name__}__height": self._height
+        }
