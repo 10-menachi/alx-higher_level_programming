@@ -5,3 +5,4 @@
 0x02-python-import_modules/calculator_1.py
 0x02-python-import_modules/variable_load_5.py
 */main.py
+*/__pycache__/
