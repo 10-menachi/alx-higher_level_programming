@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+Module 8-rectangle.py.
 This module contains a class Rectangle that inherits from BaseGeometry
 """
 
