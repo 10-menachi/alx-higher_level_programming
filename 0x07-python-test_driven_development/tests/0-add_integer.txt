@@ -28,10 +28,12 @@ Test Cases:
 
 3. Test Case: float overflow
       >>> add_integer(1, 1e100)
+      Expected Output:
       Traceback (most recent call last):
-        File "<stdin>", line 1, in <module>
-        File "0-add_integer.py", line 7, in add_integer
-          raise OverflowError("Number too large")
+      File "<stdin>", line 1, in <module>
+      File "0-add_integer.py", line 7, in add_integer
+         raise OverflowError("Number too large")
       OverflowError: Number too large
+
 
 ===========================================
