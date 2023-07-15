@@ -1,0 +1,64 @@
+*****************************************************
+*                                                   *
+*                matrix_mul Module                *
+*                                                   *
+*****************************************************
+
+Using the `matrix_mul` Function
+-------------------------------
+
+Import the function:
+
+    >>> matrix_mul = __import__('matrix_mul').matrix_mul
+
+Test Cases:
+-----------
+
+1. Test Case: Regular tests
+
+    >>> matrix_a = [[1, 2], [3, 4]]
+    >>> matrix_b = [[5, 6], [7, 8]]
+    >>> matrix_mul(matrix_a, matrix_b)
+    Expected Output:
+    [[19, 22], [43, 50]]
+
+    >>> matrix_c = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_d = [[7, 8], [9, 10], [11, 12]]
+    >>> matrix_mul(matrix_c, matrix_d)
+    Expected Output:
+    [[58, 64], [139, 154]]
+
+    >>> matrix_e = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_f = [[7, 8], [9, 10]]
+    >>> matrix_mul(matrix_e, matrix_f)
+    Expected Output:
+    [[31, 34], [85, 94]]
+
+2. Test Case: Empty matrices
+
+    >>> matrix_g = [[]]
+    >>> matrix_h = [[1, 2, 3]]
+    >>> matrix_mul(matrix_g, matrix_h)
+    Expected Output: ValueError: m_a can't be empty or m_b can't be empty
+
+    >>> matrix_i = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_j = [[]]
+    >>> matrix_mul(matrix_i, matrix_j)
+    Expected Output: ValueError: m_a can't be empty or m_b can't be empty
+
+3. Test Case: Invalid matrices
+
+    >>> matrix_k = [[1, 2], [3, 4]]
+    >>> matrix_l = [[5, 6, 7], [8, 9]]
+    >>> matrix_mul(matrix_k, matrix_l)
+    Expected Output: ValueError: m_a and m_b can't be multiplied
+
+    >>> matrix_m = [[1, 2], [3, 4]]
+    >>> matrix_n = [[5, 'a'], [6, 7]]
+    >>> matrix_mul(matrix_m, matrix_n)
+    Expected Output: TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+
+    >>> matrix_o = [[1, 2], [3, 4]]
+    >>> matrix_p = 'invalid'
+    >>> matrix_mul(matrix_o, matrix_p)
+    Expected Output: TypeError: m_a must be a list or m_b must be a list
