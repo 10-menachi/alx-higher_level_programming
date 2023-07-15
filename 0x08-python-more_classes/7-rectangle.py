@@ -9,7 +9,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    symbol = 'C'
+    printsymbol = '#'
 
     def __init__(self, width=0, height=0) -> None:
         self.__width = width
@@ -60,7 +60,7 @@ class Rectangle:
         """Prints the rectangle"""
         if self.__height and self.__width == 0:
             return ""
-        return "\n".join([Rectangle.symbol * self.__width] * self.__height)
+        return "\n".join([Rectangle.printsymbol * self.__width] * self.__height)
 
     def __repr__(self) -> str:
         """Returns a string representation of the rectangle"""
