@@ -18,4 +18,12 @@ Test Cases:
       >>> add_integer(1, 2)
       3
 
+2. Test Case: check type
+      >>> add_integer(1, "two")
+      Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "0-add_integer.py", line 5, in add_integer
+          raise TypeError("b must be an integer")
+      TypeError: b must be an integer
+
 ===========================================
