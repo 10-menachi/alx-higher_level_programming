@@ -9,7 +9,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    symbol = '#'
+    symbol = 'C'
 
     def __init__(self, width=0, height=0) -> None:
         self.__width = width
