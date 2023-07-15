@@ -13,9 +13,9 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     text = text.strip()
-    output = ""
+    result = ""
     for char in text:
-        output += char
-        if char in ('.', '?', ':'):
-            output += '\n\n'
-    print(output)
+        result += char
+        if char in ('.', '?', ':', ' ', '\t'):
+            result += '\n' * 2
+    print(result)
