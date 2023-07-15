@@ -9,7 +9,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    printsymbol = '#'
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0) -> None:
         self.__width = width
@@ -21,11 +21,6 @@ class Rectangle:
         """Width property for the rectangle"""
         return self.__width
 
-    @property
-    def height(self):
-        """height property for the rectangle"""
-        return self.__height
-
     @width.setter
     def width(self, value):
         "width setter"
@@ -35,6 +30,11 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
+    @property
+    def height(self):
+        """height property for the rectangle"""
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -47,26 +47,26 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        if self.__height and self.__width == 0:
+        if self.__height == 0 or self.__width == 0:
             return 0
         return self.__height * self.__width
 
     def perimeter(self):
-        if self.__height and self.__width == 0:
+        if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__height + self.__width)
 
     def __str__(self) -> str:
         """Prints the rectangle"""
-        if self.__height and self.__width == 0:
+        if self.__height == 0 or self.__width == 0:
             return ""
-        return "\n".join([Rectangle.printsymbol * self.__width] * self.__height)
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self) -> str:
         """Returns a string representation of the rectangle"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """Deletes the rectangle"""
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
