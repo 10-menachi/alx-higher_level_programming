@@ -54,4 +54,8 @@ Test Cases:
     Input: add_integer(float('nan'))
     Expected Output: ValueError: cannot convert float NaN to integer
 
+11. Test Case: Integer Casting
+    Input: add_integer(3.0, 4.0)
+    Expected Output: 7
+
 ===========================================
