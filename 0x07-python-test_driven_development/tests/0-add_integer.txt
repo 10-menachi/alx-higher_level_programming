@@ -1,0 +1,57 @@
+*****************************************************
+*                                                   *
+*                0-add_integer Module                *
+*                                                   *
+*****************************************************
+
+Using the `add_integer` Function
+-------------------------------
+
+Import the function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test Cases:
+-----------
+
+1. Test Case: Both inputs are integers
+   Input: add_integer(5, 3)
+   Expected Output: 8
+
+2. Test Case: One input is a float
+   Input: add_integer(7.2, 4)
+   Expected Output: 11
+
+3. Test Case: Both inputs are floats
+   Input: add_integer(2.5, 1.5)
+   Expected Output: 4
+
+4. Test Case: Default value for b is used
+   Input: add_integer(10)
+   Expected Output: 108
+
+5. Test Case: Invalid input type (a is a string)
+   Input: add_integer("7", 3)
+   Expected Output: TypeError: a must be an integer or b must be an integer
+
+6. Test Case: Invalid input type (b is a list)
+   Input: add_integer(8, [2, 4])
+   Expected Output: TypeError: a must be an integer or b must be an integer
+
+7. Test Case: Large numbers causing overflow
+   Input: add_integer(1000e1000)
+   Expected Output: OverflowError: cannot convert float infinity to integer
+
+8. Test Case: Non-numeric input (a is None)
+   Input: add_integer(None)
+   Expected Output: TypeError: a must be an integer or b must be an integer
+
+9. Test Case: Non-numeric input (a is a string)
+   Input: add_integer("Hello", "World")
+   Expected Output: TypeError: a must be an integer or b must be an integer
+
+10. Test Case: NaN input
+    Input: add_integer(float('nan'))
+    Expected Output: ValueError: cannot convert float NaN to integer
+
+===========================================
