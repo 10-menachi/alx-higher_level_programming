@@ -1,0 +1,50 @@
+*****************************************************
+*                                                   *
+*                5-text_indentation Module                *
+*                                                   *
+*****************************************************
+
+Using the `text_indentation` Function
+-------------------------------
+
+Import the function:
+
+    >>> text_indentation = __import__('5-text_indentation.py').text_indentation
+
+Test Cases:
+-----------
+
+1. Test Case: Regular tests
+
+    >>> text_indentation("Hello. How are you? I'm fine.")
+    Expected Output:
+    Hello
+
+    How are you
+
+    I'm fine
+
+    >>> text_indentation("   This is a test.   ")
+    Expected Output:
+    This is a test
+
+    >>> text_indentation("One. Two. Three? Four: Five?")
+    Expected Output:
+    One
+
+    Two
+
+    Three
+
+    Four
+
+    Five
+
+    >>> text_indentation("No special characters here")
+    Expected Output:
+    No special characters here
+
+    >>> text_indentation("")
+    Expected Output: (no output)
+
+===========================================
