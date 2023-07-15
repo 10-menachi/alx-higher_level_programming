@@ -1,0 +1,54 @@
+*****************************************************
+*                                                   *
+*                4-print_square Module                *
+*                                                   *
+*****************************************************
+
+Using the `print_square` Function
+-------------------------------
+
+Import the function:
+
+    >>> print_square = __import__('4-print_square.py').print_square
+
+Test Cases:
+-----------
+
+1. Test Case: Regular Tests
+
+        >>> print_square(5)
+        Expected Output:
+        #####
+        #####
+        #####
+        #####
+        #####
+
+        >>> print_square(-3)
+        Expected Output: ValueError: size must be >= 0
+
+        >>> print_square(2.5)
+        Expected Output: TypeError: size must be an integer
+
+        >>> print_square(3.7)
+        Expected Output: TypeError: size must be an integer
+
+        >>> print_square(0)
+        Expected Output: (no output)
+
+        >>> print_square(10)
+        Expected Output:
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+
+
+
+===========================================
