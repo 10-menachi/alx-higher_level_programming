@@ -1,0 +1,19 @@
+*****************************************************
+*                                                   *
+*                1-matrix_divided Module                *
+*                                                   *
+*****************************************************
+
+Using the `matrix_divided` Function
+-------------------------------
+
+Import the function:
+
+    >>> matrix_divided = __import__('2-matrix_divided.py').matrix_divided
+
+Test Cases:
+-----------
+
+1. 
+
+===========================================
