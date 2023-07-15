@@ -6,6 +6,9 @@ This module contains a function that divides all elements of a matrix.
 
 
 def matrix_divided(matrix, div):
+    """
+    Function that divides all elements of a matrix.
+    """
     if not isinstance(matrix, list) or not all(
             isinstance(row, list) for row in matrix
     ):
