@@ -30,10 +30,10 @@ def validate_matrix(matrix, name_of_matrix):
     Validates the matrix.
     """
     if not isinstance(matrix, list):
-        raise TypeError(f"{name_of_matrix} must be a list")
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
 
     if not all(isinstance(row, list) for row in matrix):
-        raise TypeError(f"{name_of_matrix} must be a list of lists")
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
 
     if len(matrix) == 0 or any(len(row) == 0 for row in matrix):
         raise ValueError(f"{name_of_matrix} can't be empty")
