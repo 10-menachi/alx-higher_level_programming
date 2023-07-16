@@ -1,0 +1,17 @@
+*****************************************************
+*                                                   *
+*                lazy_matrix_mul Module                *
+*                                                   *
+*****************************************************
+
+Using the `lazy_matrix_mul` Function
+-------------------------------
+
+Import the function:
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul.py').lazy_matrix_mul
+
+Test Cases:
+-----------
+
+===================================================
