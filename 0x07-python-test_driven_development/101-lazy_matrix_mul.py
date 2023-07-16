@@ -22,7 +22,7 @@ def lazy_matrix_mul(m_a, m_b):
 
     result = np.matmul(np_a, np_b)
 
-    return result.tolist()
+    return result
 
 
 def validate_matrix(matrix, name_of_matrix):
