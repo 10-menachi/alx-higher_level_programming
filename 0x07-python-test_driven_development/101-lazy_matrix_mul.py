@@ -18,7 +18,8 @@ def lazy_matrix_mul(m_a, m_b):
     np_b = np.array(m_b)
 
     if np_a.shape[1] != np_b.shape[0]:
-        raise ValueError("m_a and m_b can't be multiplied")
+        raise ValueError(
+            f"shapes {np_a.shape} and {np_b.shape} not aligned: {np_a.shape[1]} (dim 1) != {np_b.shape[0]} (dim 0)")
 
     result = np.matmul(np_a, np_b)
 
@@ -36,14 +37,15 @@ def validate_matrix(matrix, name_of_matrix):
         raise ValueError("Scalar operands are not allowed, use '*' instead")
 
     if len(matrix) == 0 or any(len(row) == 0 for row in matrix):
-        raise ValueError(f"{name_of_matrix} can't be empty")
+        raise ValueError(
+            f"shapes ({len(matrix)},) and (0,) not aligned: 0 (dim 1) != 0 (dim 0) in {name_of_matrix}")
 
     for row in matrix:
         if len(row) != len(matrix[0]):
             raise TypeError(
-                f"each row of {name_of_matrix} must be of the same size")
+                f"setting an array element with a sequence.")
 
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError(
-                    f"{name_of_matrix} should contain only integers or floats")
+                    "invalid data type for einsum")
