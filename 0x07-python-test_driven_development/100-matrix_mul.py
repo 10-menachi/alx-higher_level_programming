@@ -36,7 +36,7 @@ def validate_matrix(matrix):
         raise TypeError("m_a must be a list")
 
     if not all(isinstance(row, list) for row in matrix):
-        raise TypeError("m_b must be a list")
+        raise TypeError("m_a must be a list of lists")
 
     if len(matrix) == 0 or any(len(row) == 0 for row in matrix):
         raise ValueError("m_a can't be empty")
