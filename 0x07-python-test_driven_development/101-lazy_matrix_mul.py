@@ -38,7 +38,7 @@ def validate_matrix(matrix, name_of_matrix):
 
     if len(matrix) == 0 or any(len(row) == 0 for row in matrix):
         raise ValueError(
-            f"shapes ({len(matrix)},) and (0,) not aligned: 0 (dim 1) != 0 (dim 0) in {name_of_matrix}")
+            f"shapes ({len(matrix)},) and (0,) not aligned: 0 (dim 1) != 2 (dim 0)")
 
     for row in matrix:
         if len(row) != len(matrix[0]):
