@@ -9,7 +9,7 @@ import numpy as np
 
 def lazy_matrix_mul(m_a, m_b):
     """
-    Multiplies two matrices using NumPy.
+    Multiplies 2 matrices.
     """
     validate_matrix(m_a, "matrix_a")
     validate_matrix(m_b, "matrix_b")
@@ -27,7 +27,7 @@ def lazy_matrix_mul(m_a, m_b):
 
 def validate_matrix(matrix, name_of_matrix):
     """
-    Validates the matrix for the required conditions.
+    Validates the matrix.
     """
     if not isinstance(matrix, list):
         raise TypeError(f"{name_of_matrix} must be a list")
@@ -39,12 +39,11 @@ def validate_matrix(matrix, name_of_matrix):
         raise ValueError(f"{name_of_matrix} can't be empty")
 
     for row in matrix:
+        if len(row) != len(matrix[0]):
+            raise TypeError(
+                f"each row of {name_of_matrix} must be of the same size")
+
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError(
                     f"{name_of_matrix} should contain only integers or floats")
-
-    row_sizes = set(len(row) for row in matrix)
-    if len(row_sizes) > 1:
-        raise TypeError(
-            f"each row of {name_of_matrix} must be of the same size")
