@@ -22,7 +22,7 @@ def parse_line(line):
     Parse a line from stdin
     """
     parts = line.split()
-    if len(parts) >= 8:
+    if len(parts) >= 9:
         return int(parts[-1])
     return 0
 
