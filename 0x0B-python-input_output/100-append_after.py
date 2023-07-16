@@ -21,7 +21,11 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 file_out.write(new_string)
 
-    with open(temp_filename, 'r') as temp_file, open(filename, 'w') as original_file:
+    with open(
+            temp_filename, 'r'
+    ) as temp_file, open(
+            filename, 'w'
+    ) as original_file:
         for line in temp_file:
             original_file.write(line)
 
