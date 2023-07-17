@@ -35,3 +35,13 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Save a list of objects to a file.
+        """
+        file_name = cls.__name__ + ".txt"
+        with open(file_name, "w") as file:
+            for obj in list_objs:
+                file.write(str(obj) + "\n")
