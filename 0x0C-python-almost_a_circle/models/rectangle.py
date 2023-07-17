@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-
 """
 This module contains a class called Rectangle
 that inherits from the Base class
 """
 
-Base = __import__('base.py').Base
+Base = __import__('base').Base
 
 
 class Rectangle(Base):
@@ -19,10 +18,10 @@ class Rectangle(Base):
         This is the constructor for the Rectangle class
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
         @property
         def width(self):
