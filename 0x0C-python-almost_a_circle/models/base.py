@@ -35,6 +35,7 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """
         Save a list of objects to a file.
@@ -43,3 +44,16 @@ class Base:
         with open(file_name, "w") as file:
             for obj in list_objs:
                 file.write(str(obj) + "\n")
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        This method returns an instance with all attributes already set
+        """
+
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
