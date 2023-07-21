@@ -84,3 +84,17 @@ class Base:
             else:
                 file.write(cls.to_json_string([obj.to_dictionary()
                                                for obj in list_objs]))
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        This method returns a list of instances
+        """
+
+        file_name = cls.__name__ + ".json"
+        try:
+            with open(file_name, "r") as file:
+                return [cls.create(**obj) for obj in cls.from_json_string(
+                    file.read())]
+        except:
+            return []
