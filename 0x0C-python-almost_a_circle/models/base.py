@@ -57,3 +57,15 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        This method returns the list of the JSON string representation
+        json_string
+        """
+
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
