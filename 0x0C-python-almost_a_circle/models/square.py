@@ -17,7 +17,20 @@ class Square(Rectangle):
         """
         This is the constructor for the Square class
         """
-        super().__init__(size, size, x, y, id)
+        if not isinstance(size, int):
+            raise TypeError("width must be an integer")
+        elif size <= 0:
+            raise ValueError("width must be > 0")
+        elif not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
+        elif not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
