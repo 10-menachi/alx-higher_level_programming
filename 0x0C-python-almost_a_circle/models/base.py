@@ -96,5 +96,5 @@ class Base:
             with open(file_name, "r") as file:
                 return [cls.create(**obj) for obj in cls.from_json_string(
                     file.read())]
-        except:
+        except FileNotFoundError:
             return []
