@@ -98,3 +98,32 @@ class Base:
                     file.read())]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        This method writes the JSON string representation of list_objs
+        to a file
+        """
+
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, "w") as file:
+            if list_objs is None:
+                file.write(cls.to_json_string([]))
+            else:
+                file.write(cls.to_json_string([obj.to_dictionary()
+                                               for obj in list_objs]))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        This method returns a list of instances
+        """
+
+        file_name = cls.__name__ + ".csv"
+        try:
+            with open(file_name, "r") as file:
+                return [cls.create(**obj) for obj in cls.from_json_string(
+                    file.read())]
+        except FileNotFoundError:
+            return []
