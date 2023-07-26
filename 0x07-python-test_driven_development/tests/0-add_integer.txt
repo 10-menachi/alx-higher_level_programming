@@ -1,6 +1,6 @@
 *****************************************************
 *                                                   *
-*                0-add_integer Module                *
+*                0-add_integer Module               *
 *                                                   *
 *****************************************************
 
@@ -14,7 +14,7 @@ Import the function:
 Test Cases:
 -----------
 
- >>> add_integer(1, 2)
+    >>> add_integer(1, 2)
     3
 
     >>> add_integer(1, 9.3)
