@@ -13,8 +13,15 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     text = text.strip()
-    result = ""
+    texttwo = ""
     for char in text:
+        if char == ' ':
+            pass
+        else:
+            texttwo += char
+
+    result = ""
+    for char in texttwo:
         result += char
         if char in ('.', '?', ':'):
             result += '\n' * 2
