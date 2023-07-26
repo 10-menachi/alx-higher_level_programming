@@ -10,12 +10,9 @@ def text_indentation(text):
     This function prints a text
     with 2 new lines after each of these characters:
     """
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    text = text.strip()
-    result = ""
-    for char in text:
-        result += char
-        if char in ('.', '?', ':'):
-            result += '\n' * 2
-    print(result)
+    for char in ".?:":
+        text = (char + "\n\n").join([line.strip(" ")
+                                     for line in text.split(char)])
+        print(text, end="")
