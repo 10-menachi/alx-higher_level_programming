@@ -23,8 +23,8 @@ def parse_line(line):
     """
     parts = line.split()
     if len(parts) >= 9:
-        return int(parts[-1])
-    return 0
+        return int(parts[-1]), parts[8]
+    return 0, ''
 
 
 def compute_metrics():
@@ -33,20 +33,16 @@ def compute_metrics():
     """
     total_file_size = 0
     status_code_counts = defaultdict(int)
-    line_count = 0
 
     try:
         for line in sys.stdin:
-            line_count += 1
-            file_size = parse_line(line)
+            file_size, status_code = parse_line(line)
             total_file_size += file_size
 
-            status_code = line.split()[8]
-            status_code_counts[status_code] += 1
+            if status_code:
+                status_code_counts[status_code] += 1
 
-            if line_count % 10 == 0:
-                print_statistics(total_file_size, status_code_counts)
-                print()
+        print_statistics(total_file_size, status_code_counts)
 
     except KeyboardInterrupt:
         print_statistics(total_file_size, status_code_counts)
