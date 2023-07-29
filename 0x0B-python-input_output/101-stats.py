@@ -16,15 +16,14 @@ def print_statistics(total_file_size, status_code_counts):
         count = status_code_counts[status_code]
         print(f"{status_code}: {count}")
 
-
 def parse_line(line):
     """
     Parse a line from stdin
     """
     parts = line.split()
     if len(parts) >= 9:
-        status_code = parts[-1]
-        file_size = int(parts[-2])
+        status_code = parts[-2]
+        file_size = int(parts[-1])
         return file_size, status_code
     return 0, ''
 
