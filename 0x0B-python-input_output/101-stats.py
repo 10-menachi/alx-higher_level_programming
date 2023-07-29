@@ -23,8 +23,8 @@ def parse_line(line):
     """
     parts = line.split()
     if len(parts) >= 9:
-        status_code = parts[-2]
-        file_size = int(parts[-1])
+        status_code = parts[-1]
+        file_size = int(parts[-2])
         return file_size, status_code
     return 0, ''
 
