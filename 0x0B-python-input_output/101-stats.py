@@ -1,52 +1,35 @@
-#!/usr/bin/python3
-"""
-This script reads stdin line by line and computes metrics:
-"""
-
 import sys
-from collections import defaultdict
+import signal
 
+total_file_size = 0
+status_codes_count = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+line_count = 0
 
-def print_statistics(total_file_size, status_code_counts):
-    """
-    Print statistics
-    """
-    print("File size:", total_file_size)
-    for status_code in sorted(status_code_counts.keys()):
-        count = status_code_counts[status_code]
-        print(f"{status_code}: {count}")
+def print_statistics():
+    print(f"Total file size: {total_file_size}")
+    for status_code in sorted(status_codes_count.keys()):
+        count = status_codes_count[status_code]
+        if count > 0:
+            print(f"{status_code}: {count}")
 
-def parse_line(line):
-    """
-    Parse a line from stdin
-    """
-    parts = line.split()
-    if len(parts) >= 9:
-        status_code = parts[-2]
-        file_size = int(parts[-1])
-        return file_size, status_code
-    return 0, ''
+def signal_handler(sig, frame):
+    print_statistics()
+    sys.exit(0)
 
+signal.signal(signal.SIGINT, signal_handler)
 
-def compute_metrics():
-    """
-    Compute metrics
-    """
-    total_file_size = 0
-    status_code_counts = defaultdict(int)
+try:
+    for line in sys.stdin:
+        line = line.strip()
+        if line:
+            _, _, _, _, status_code, file_size = line.split()[0:6]
+            total_file_size += int(file_size)
+            status_codes_count[int(status_code)] += 1
 
-    try:
-        for line in sys.stdin:
-            file_size, status_code = parse_line(line)
-            total_file_size += file_size
+            line_count += 1
+            if line_count % 10 == 0:
+                print_statistics()
 
-            if status_code:
-                status_code_counts[status_code] += 1
-
-        print_statistics(total_file_size, status_code_counts)
-
-    except KeyboardInterrupt:
-        print_statistics(total_file_size, status_code_counts)
-
-
-compute_metrics()
+except KeyboardInterrupt:
+    print_statistics()
+    sys.exit(0)
