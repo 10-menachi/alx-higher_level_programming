@@ -1,2 +1,2 @@
--- This script retrieves rows with the id 89
-SELECT * FROM first_table WHERE id = 89;
+-- This script retrieves number of rows with the id 89
+SELECT COUNT(*) FROM `table` WHERE `id` = 89
