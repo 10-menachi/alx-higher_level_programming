@@ -2,6 +2,7 @@
 const [, , ...args] = process.argv;
 if (args.length < 2) {
   console.log(0);
+} else {
+  const sorted = args.sort((a, b) => a - b);
+  console.log(sorted[sorted.length - 2]);
 }
-const sorted = args.sort((a, b) => a - b);
-console.log(sorted[sorted.length - 2]);
