@@ -2,11 +2,10 @@
 
 const fs = require('fs');
 const file = process.argv[2];
-const string_to_write = process.argv[3];
+const stringToWrite = process.argv[3];
 
-fs.writeFile(file, string_to_write, 'utf8', function (err, data) {
+fs.writeFile(file, stringToWrite, 'utf8', function (err) {
   if (err) {
     console.log(err);
-    return;
   }
 });
