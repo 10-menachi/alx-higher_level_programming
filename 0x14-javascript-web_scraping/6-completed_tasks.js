@@ -7,8 +7,8 @@ request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
-    let users = JSON.parse(body);
-    let completed = {};
+    const users = JSON.parse(body);
+    const completed = {};
     users.reduce(function (acc, user) {
       if (user.completed) {
         if (acc[user.userId]) {
