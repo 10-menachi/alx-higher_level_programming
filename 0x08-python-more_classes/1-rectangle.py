@@ -17,12 +17,14 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
+    @property
     def width(self):
         """
         This method returns the value of the width property
         """
         return self.__width
 
+    @width.setter
     def width(self, value):
         """
         This method sets the width property to the value variable
@@ -35,12 +37,14 @@ class Rectangle:
 
         self.__width = value
 
+    @property
     def height(self):
         """
         This method returns the value of the height property
         """
         return self.__height
 
+    @height.setter
     def height(self, value):
         """
         This method sets the height property to the value variable
