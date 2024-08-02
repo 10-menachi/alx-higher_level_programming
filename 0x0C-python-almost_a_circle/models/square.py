@@ -34,10 +34,9 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        """
-        Return a string representation of the Square.
-        """
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+        """Defines a format for the string representation of the class"""
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
+            {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """
