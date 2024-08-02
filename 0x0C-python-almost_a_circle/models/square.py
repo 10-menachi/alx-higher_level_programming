@@ -37,7 +37,7 @@ class Square(Rectangle):
         """
         Return a string representation of the Square.
         """
-        return f"[Square] ({self.id}) {self.__x}/{self.__y} - {self.__width}"
+        return f"[Square] ({self.id}) {self.__x}/{self.__y} - {self.size}"
 
     def update(self, *args, **kwargs):
         """
