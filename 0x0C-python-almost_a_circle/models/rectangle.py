@@ -126,12 +126,25 @@ class Rectangle(Base):
             *args: New values for id, width, height, x, and y in that order.
             **kwargs: New values for attributes specified by keyword arguments.
         """
-        attributes = ('id', 'width', 'height', 'x', 'y')
-
         if args:
+            attributes = ('id', 'width', 'height', 'x', 'y')
             for attr, value in zip(attributes, args):
                 setattr(self, attr, value)
         else:
             for key, value in kwargs.items():
-                if key in attributes:
+                if key in ('width', 'height', 'x', 'y'):
                     setattr(self, key, value)
+                elif key == 'id':
+                    self.id = value
+
+    def to_dictionary(self):
+        """
+        Return the dictionary representation of the Rectangle.
+        """
+        return {
+            'id': self.id,
+            'width': self.__width,
+            'height': self.__height,
+            'x': self.__x,
+            'y': self.__y
+        }
