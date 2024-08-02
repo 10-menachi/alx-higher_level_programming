@@ -1,0 +1,17 @@
+Test Cases for add_integer
+==========================
+
+Case 0: Integer Casting
+------------------------
+
+Description:
+    Test the casting of a float to an integer.
+
+Input:
+    1.0, 2.0
+
+Expected Output:
+    3
+
+Actual Output:
+    3
