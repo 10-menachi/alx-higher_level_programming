@@ -17,10 +17,10 @@ class Rectangle(Base):
         Initialize a Rectangle instance with validation.
         """
         super().__init__(id)
-        self.width = width  # Calls the setter for validation
-        self.height = height  # Calls the setter for validation
-        self.x = x  # Calls the setter for validation
-        self.y = y  # Calls the setter for validation
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -105,11 +105,9 @@ class Rectangle(Base):
         Print the Rectangle instance with the
         character #, taking into account x and y.
         """
-        # Print `y` lines of empty space
         for _ in range(self.__y):
             print()
 
-        # Print the rectangle with `x` spaces before each line
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
@@ -117,6 +115,23 @@ class Rectangle(Base):
         """
         Return a string representation of the Rectangle.
         """
-
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " \
             f"{self.__width}/{self.__height}"
+
+    def update(self, *args, **kwargs):
+        """
+        Update the attributes of the Rectangle with new values.
+
+        Args:
+            *args: New values for id, width, height, x, and y in that order.
+            **kwargs: New values for attributes specified by keyword arguments.
+        """
+        attributes = ('id', 'width', 'height', 'x', 'y')
+
+        if args:
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
