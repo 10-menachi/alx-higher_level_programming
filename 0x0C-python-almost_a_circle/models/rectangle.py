@@ -102,7 +102,8 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Print the Rectangle instance with the character #, taking into account x and y.
+        Print the Rectangle instance with the
+        character #, taking into account x and y.
         """
         # Print `y` lines of empty space
         for _ in range(self.__y):
@@ -116,4 +117,7 @@ class Rectangle(Base):
         """
         Return a string representation of the Rectangle.
         """
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+        return f"[Rectangle] ({self.id}) {self.__x}
+        /{self.__y} - {self.__width}/{self.__height}"
+
