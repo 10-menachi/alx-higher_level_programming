@@ -23,3 +23,19 @@ A JavaScript script that adds the class red to the HTML tag HEADER to red (#FF00
 #### 4-script.js
 
 A JavaScript script that toggles the class of the HTML tag HEADER to red (#FF0000) when the user clicks on the tag DIV#toggle_header using jQuery.
+
+#### 5-script.js
+
+A JavaScript script that adds a LI element to a list when the user clicks on the tag DIV#add_item using jQuery.
+
+#### 6-script.js
+
+A JavaScript script that updates the text of the HTML tag HEADER to "New Header!!!" when the user clicks on DIV#update_header using jQuery.
+
+#### 7-script.js
+
+A JavaScript script that fetches and replaces the name of this URL: `https://swapi-api.hbtn.io/api/people/5/?format=json`.
+
+#### 8-script.js
+
+A JavaScript script that fetches and lists all movies title by using this URL: `https://swapi-api.hbtn.io/api/films/?format=json`.
