@@ -39,3 +39,23 @@ A JavaScript script that fetches and replaces the name of this URL: `https://swa
 #### 8-script.js
 
 A JavaScript script that fetches and lists all movies title by using this URL: `https://swapi-api.hbtn.io/api/films/?format=json`.
+
+#### 9-script.js
+
+A JavaScript script that fetches and prints the San Francisco wind speed by using this URL: `https://query.yahooapis.com/v1/public/yql?q=select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="San Francisco, CA")&format=json`.
+
+#### 100-script.js
+
+A JavaScript script that updates the text color of the HTML tag HEADER to red (#FF0000) without using jQuery.
+
+#### 101-script.js
+
+A JavaScript script that adds, removes and clears LI elements from a list when the user clicks.
+
+#### 102-script.js
+
+A JavaScript script that fetches and prints how to say "Hello" depending on the language.
+
+#### 103-script.js
+
+A JavaScript script that fetches and prints the wind speed of Chicago when the user inputs the city name and clicks the button.
